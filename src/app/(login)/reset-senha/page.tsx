@@ -9,11 +9,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner"
 import { Auth } from "@/service/auth"
 
-const Signin = () => {
+const ResetSenha = () => {
 
     const sgninForm = z.object({
-        email: z.string().min(1).email(),
-        password: z.string().min(1),
+        senha: z.string().min(1),
+        confirmarSenha: z.string().min(1),
     })
 
     type SigninForm = z.infer<typeof sgninForm>;
@@ -29,8 +29,13 @@ const Signin = () => {
 
     const handleSignin = async (data: SigninForm) => {
         try {
-            await Auth.Login(data)
-            toast.success("login with success")
+            await Auth.ResetSenha(data)
+            toast.success("Enviamos um link de autenticação para seu email.", {
+                action: {
+                    label: "Reenviar",
+                    onClick: () => handleSignin(data)
+                }
+            })
             reset();
         } catch (e) {
             toast.error("email or password invalid");
@@ -55,32 +60,29 @@ const Signin = () => {
                     </div>
                     <form className="flex flex-col space-y-4" onSubmit={handleSubmit(handleSignin)}>
                         <div className="space-y-2">
-                            <Label htmlFor="email">Seu email</Label>
+                            <Label htmlFor="senha">Sua Senha</Label>
                             <Input
                                 required
-                                type="email"
-                                id="email"
-                                {...register("email")}
+                                type="text"
+                                id="senha"
+                                {...register("senha")}
                             />
                         </div>
                         <div className="space-y-2">
-                            <Label htmlFor="password">Sua Senha</Label>
+                            <Label htmlFor="confirmarSenha">Confirme sua senha</Label>
                             <Input
                                 required
-                                type="password"
-                                id="password"
-                                {...register("password")}
+                                type="text"
+                                id="confirmarSenha"
+                                {...register("confirmarSenha")}
                             />
                         </div>
-                        <p className="text-sm">Esqueceu sua senha ?
-                            <Link href="/reset-senha" className="text-sky-500">clique aqui</Link>
-                        </p>
                         <Button
                             type="submit"
                             className="w-full"
                             disabled={formState.isSubmitting}
                         >
-                            Acessar Painel
+                            Reset senha
                         </Button>
                     </form>
                 </div>
@@ -88,4 +90,4 @@ const Signin = () => {
         </>
     )
 }
-export default Signin
+export default ResetSenha

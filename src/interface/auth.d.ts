@@ -1,4 +1,9 @@
 export interface login {
    email: string
-   senha: string
+   password: string
+}
+
+export interface ResetSenha {
+   senha: string 
+   confirmarSenha: string 
 }
