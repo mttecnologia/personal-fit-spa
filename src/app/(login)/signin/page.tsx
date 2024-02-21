@@ -6,19 +6,17 @@ import { z } from "zod"
 import Link from "next/link"
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter } from "next/navigation"
 import { toast } from "sonner"
+import { Auth } from "@/service/auth"
 
 const Signin = () => {
 
     const sgninForm = z.object({
-        email: z.string(),
-        senha: z.string(),
+        email: z.string().min(1).email(),
+        senha: z.string().min(1),
     })
 
     type SigninForm = z.infer<typeof sgninForm>;
-
-    // const router = useRouter()
 
     const {
         register,
@@ -30,16 +28,20 @@ const Signin = () => {
     })
 
     const handleSignin = async (data: SigninForm) => {
-        console.log(data)
-        toast.success("Enviamos um link de autenticação para seu email.", {
-            action: {
-                label: "Reenviar",
-                onClick: () => handleSignin(data)
-            }
-        })
-        reset()
-    }
+        try {
+            await Auth.authLogin(data)
+            toast.success("Enviamos um link de autenticação para seu email.", {
+                action: {
+                    label: "Reenviar",
+                    onClick: () => handleSignin(data)
+                }
+            })
+            reset();
+        } catch (e) {
+         toast.error("email or password invalid");
+        }
 
+    }
     return (
         <>
             <div className="p-8">
