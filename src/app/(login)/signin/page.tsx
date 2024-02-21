@@ -8,12 +8,13 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner"
 import { Auth } from "@/service/auth"
+import { Loader } from "lucide-react"
 
 const Signin = () => {
 
     const sgninForm = z.object({
-        email: z.string().min(1).email(),
-        password: z.string().min(1),
+        email: z.string().min(1, { message: "o campo email é obrigatório" }).email("por favor digite no formado de email (test@gmail.com)"),
+        password: z.string().min(1, { message: "o campo password é obrigatório" }),
     })
 
     type SigninForm = z.infer<typeof sgninForm>;
@@ -63,6 +64,12 @@ const Signin = () => {
                                 {...register("email")}
                             />
                         </div>
+
+                        {
+                            formState.errors.email &&
+                            <span className="text-xs text-red-500 font-medium">{formState.errors.email.message}</span>
+                        }
+
                         <div className="space-y-2">
                             <Label htmlFor="password">Sua Senha</Label>
                             <Input
@@ -72,6 +79,12 @@ const Signin = () => {
                                 {...register("password")}
                             />
                         </div>
+
+                        {
+                            formState.errors.password &&
+                            <span className="text-xs text-red-500 font-medium">{formState.errors.password.message}</span>
+                        }
+
                         <p className="text-sm">Esqueceu sua senha ?
                             <Link href="/reset-senha" className="text-sky-500">clique aqui</Link>
                         </p>
@@ -80,7 +93,9 @@ const Signin = () => {
                             className="w-full"
                             disabled={formState.isSubmitting}
                         >
-                            Acessar Painel
+                           {formState.isSubmitting ?
+                                (<Loader type="TailSpin" className="cursor-not-allowed animate-spin h-8 w-8 text-white" />)
+                                : "Acessar Painel"} 
                         </Button>
                     </form>
                 </div>

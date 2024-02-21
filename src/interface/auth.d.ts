@@ -4,6 +4,13 @@ export interface login {
 }
 
 export interface ResetSenha {
-   senha: string 
-   confirmarSenha: string 
+   password: string 
+   password_confirmation: string 
+}
+
+export interface RegisterLogin {
+   name: string
+   email: string
+   password: string
+   password_confirmation: string
 }

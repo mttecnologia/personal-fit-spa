@@ -8,38 +8,47 @@ import { z } from "zod"
 import { toast } from 'sonner';
 import { useRouter } from "next/navigation"
 import Link from "next/link"
+import { Auth } from "@/service/auth"
+import { Loader } from "lucide-react"
 
- const Signup = () => {
+const Signup = () => {
 
     const signupForm = z.object({
-        nome: z.string(),
-        email: z.string(),
-        senha: z.string(),
-        senhaConfirmação: z.string(),
+        name: z.string().min(1, { message: "o campo name é obrigatório" }),
+        email: z.string().min(1, { message: "o campo email é obrigatório" }).email("por favor digite no formado de email (test@gmail.com)"),
+        password: z.string().min(1, { message: "o campo password é obrigatório" }),
+        password_confirmation: z.string().min(1, { message: "o campo password_confirmation é obrigatório" })
     })
 
     type SigninForm = z.infer<typeof signupForm>;
 
-    const { register, handleSubmit, formState, reset } = useForm<SigninForm>({
+    const { register, handleSubmit, formState, reset, watch } = useForm<SigninForm>({
         resolver: zodResolver(signupForm)
     })
 
     const router = useRouter()
 
-    const handleSignin = async (data: SigninForm) => {
+    const senha = watch("password")
+    const verificarSenha = watch("password") === watch("password_confirmation")
+
+    const handleSignup = async (data: SigninForm) => {
         try {
-            console.log(data)
+            await Auth.RegisterLogin(data)
             reset()
-            toast.success("Personal cadastrado com sucesso !", {
+            toast.success("Enviamos um link de autenticação para seu email.", {
                 action: {
                     label: "Login",
-                    onClick: () => router.replace("/signin")
+                    onClick: () => {
+                        router.replace("/signin")
+                    }
                 }
             })
+
         } catch (error) {
             toast.error("Erro ao cadastrar novo personal !")
+            console.log(error)
         }
-        
+
     }
 
     return (
@@ -58,41 +67,74 @@ import Link from "next/link"
                         <h1 className="text-2xl font-semibold tracking-tighter">Criar conta grátis</h1>
                         <p className="text-sm text-muted-foreground">seja um parceiro e comece suas vendas</p>
                     </div>
-                    <form className="flex flex-col space-y-4" onSubmit={handleSubmit(handleSignin)}>
+                    <form className="flex flex-col space-y-4" onSubmit={handleSubmit(handleSignup)}>
                         <div className="space-y-2">
                             <Label htmlFor="nome">Nome</Label>
                             <Input
                                 type="text"
+                                placeholder="digite seu nome"
                                 id="nome"
-                                {...register("nome")} />
+                                {...register("name")} />
                         </div>
+
+                        {
+                            formState.errors.name &&
+                            <span className="text-xs text-red-500 font-medium">{formState.errors.name.message}</span>
+                        }
+
                         <div className="space-y-2">
                             <Label htmlFor="email">Seu email</Label>
                             <Input
                                 type="=email"
+                                placeholder="digite seu email"
                                 id="email"
                                 {...register("email")} />
                         </div>
+
+                        {
+                            formState.errors.email &&
+                            <span className="text-xs text-red-500 font-medium">{formState.errors.email.message}</span>
+                        }
+
                         <div className="space-y-2">
                             <Label htmlFor="password">Sua senha</Label>
                             <Input
                                 type="password"
+                                placeholder="digite sua senha"
                                 id="password"
-                                {...register("senha")} />
+                                {...register("password")} />
                         </div>
+
+                        {
+                            formState.errors.password &&
+                            <span className="text-xs text-red-500 font-medium">{formState.errors.password.message}</span>
+                        }
+
                         <div className="space-y-2">
                             <Label htmlFor="password">Confirme sua senha</Label>
                             <Input
+                                className={`${
+                                    senha ? (verificarSenha ? 'bg-green-600 opacity-90' : 'bg-red-600 opacity-90 placeholder:text-white') : ''
+                                }`}
                                 type="password"
+                                placeholder="confirme sua senha"
                                 id="password"
-                                {...register("senhaConfirmação")} />
+                                {...register("password_confirmation")} />
                         </div>
+
+                        {
+                            formState.errors.password_confirmation &&
+                            <span className="text-xs text-red-500 font-medium">{formState.errors.password_confirmation.message}</span>
+                        }
+
                         <Button
                             type="submit"
-                            className="w-full"
-                            disabled={formState.isSubmitting}
+                            className="w-full disabled:cursor-not-allowed"
+                            disabled={!verificarSenha || formState.isSubmitting}
                         >
-                            Finalizar Cadastro
+                            {formState.isSubmitting ?
+                                (<Loader type="TailSpin" className="cursor-not-allowed animate-spin h-8 w-8 text-white" />)
+                                : "Finalizar Cadastro"}
                         </Button>
 
                         <p className="px-6 text-center text-sm leading-relaxed text-muted-foreground">
