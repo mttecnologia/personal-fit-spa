@@ -38,6 +38,7 @@ const Signin = () => {
         }
 
     }
+    
     return (
         <>
             <div className="p-8">
@@ -58,7 +59,6 @@ const Signin = () => {
                         <div className="space-y-2">
                             <Label htmlFor="email">Seu email</Label>
                             <Input
-                                required
                                 type="email"
                                 id="email"
                                 {...register("email")}
@@ -73,7 +73,6 @@ const Signin = () => {
                         <div className="space-y-2">
                             <Label htmlFor="password">Sua Senha</Label>
                             <Input
-                                required
                                 type="password"
                                 id="password"
                                 {...register("password")}
