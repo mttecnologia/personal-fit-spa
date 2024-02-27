@@ -1,4 +1,4 @@
-import { BarChart, Cog, Dumbbell, LibraryBig, LogOut, Search, SquareStack, Users, Users2, Video } from "lucide-react"
+import { BarChart, CircleDollarSign, Cog, Dumbbell, LibraryBig, LogOut, Search, SquareStack, Users, Users2, Video } from "lucide-react"
 import { NaviItem } from "./naveItem"
 // import { ModeToggle } from "../theme/theme-mode"
 
@@ -12,11 +12,12 @@ export const Sidebar = () => {
             </div>
 
             <nav className="space-y-0.5">
-                <NaviItem icon={BarChart} title="Dashboard" />
+                <NaviItem icon={BarChart} title="Dashboard" link="/painel-professor"/>
                 <NaviItem icon={Users2} title="Gerenciador de Alunos" />
                 <NaviItem icon={LibraryBig} title="Biblioteca de Treinos" />
                 <NaviItem icon={Video} title="Biblioteca de Exercícios" />
-                <NaviItem icon={Cog} title="Setting" />
+                <NaviItem icon={CircleDollarSign} title="Financeiro" />
+                <NaviItem icon={Cog} title="Setting" link="/setting-professor"/>
             </nav>
             <div className="mt-auto text-black flex flex-col gap-6">
                 <div className="h-px bg-zinc-200 "></div>

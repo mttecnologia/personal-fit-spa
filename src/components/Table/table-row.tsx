@@ -33,7 +33,7 @@ export const TableRowDashboard = () => {
                 <Dialog>
                     <DialogTrigger asChild>
                         <Button variant="outline" size="xs">
-                            <Search className="h-3 w-3" />
+                            <Search className="h-4 w-4" />
                             <span className="sr-only">Detalhes do pedido</span>
                         </Button>
                     </DialogTrigger>
@@ -42,7 +42,7 @@ export const TableRowDashboard = () => {
                 <Dialog>
                     <DialogTrigger asChild>
                         <Button variant="outline" size="xs">
-                            <Settings className="h-3 w-3" />
+                            <Settings className="h-4 w-4" />
                         </Button>
                     </DialogTrigger>
                     <TableAcoes />

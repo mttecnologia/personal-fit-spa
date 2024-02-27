@@ -3,17 +3,18 @@ import { ElementType } from "react"
 
 interface NaviItemsProps {
     title: string
-    icon: ElementType
+    icon: ElementType,
+    link?: string 
 }
 
-export const NaviItem = ({title, icon: Icon} : NaviItemsProps) => {
+export const NaviItem = ({title, icon: Icon, link} : NaviItemsProps) => {
     return (
-        <a className="group flex items-center gap-3 rounded px-3 py-2 cursor-pointer hover:bg-violet-50">
+        <a className="group flex items-center gap-3 rounded px-3 py-2 cursor-pointer hover:bg-sky-50" href={link}>
             <Icon className="h-5 w-5 text-zinc-500" />
-            <span className="font-medium text-zinc-700  group-hover:text-violet-500">
+            <span className="font-medium text-zinc-700  group-hover:text-sky-500">
                 {title}
             </span>
-            <ChevronDown className="ml-auto h-5 w-5 text-zinc-400 group-hover:text-violet-300" />
+            <ChevronDown className="ml-auto h-5 w-5 text-zinc-400 group-hover:text-sky-300" />
         </a>
     )
 }

@@ -9,6 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner"
 import { Auth } from "@/service/auth"
 import { Loader } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 const Signin = () => {
 
@@ -18,6 +19,8 @@ const Signin = () => {
     })
 
     type SigninForm = z.infer<typeof sgninForm>;
+
+    const router = useRouter()
 
     const {
         register,
@@ -33,6 +36,7 @@ const Signin = () => {
             await Auth.Login(data)
             toast.success("login with success")
             reset();
+            router.push("/painel-professor")
         } catch (e) {
             toast.error("email or password invalid");
         }
