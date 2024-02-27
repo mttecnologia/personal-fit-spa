@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { DollarSign, KeyRound, LockKeyhole, Mail, MapPin, Monitor, Phone, SquareUser, User, UserX } from "lucide-react";
+import { KeyRound, LockKeyhole, Mail, MapPin, Monitor, Phone, SquareUser, User, UserX } from "lucide-react";
 
 const VisaoGeral = () => {
     return (
         <>
             <div className="w-full mt-4">
-                <Card className="col-span-1 bg-zinc-100">
+                <Card className=" bg-zinc-100">
                     <CardHeader className="flex-row space-y-0 items-center pb-2 gap-2">
                         <User className="w-7 h-7" />
                         <CardTitle className="font-semibold text-base">Dados Pessoais</CardTitle>
@@ -73,16 +73,16 @@ const VisaoGeral = () => {
                     </CardContent>
                 </Card>
             </div>
-            <div className="mt-5 space-y-3">
+            <div className="mt-5 space-y-3 ">
                 <div className="flex gap-3 items-center">
                     <UserX className="h-5 w-5 text-red-600"/>
                     <span className="text-lg font-semibold">Excluir Conta</span>
                 </div>
                 <div className="flex flex-col justify-center space-y-1">
                     <span className="text-sm text-black ">Se você excluir sua conta, todos os dados relacionados a você serão deletados e não será possível a restauração.</span>
-                    <span className="text-xs text-muted-foreground">A exclusão da conta não elimina o recebimento de e-mails da Rocketseat. Para que isso aconteça, peça no oi@rocketseat.com.br.</span>
+                    <span className="text-xs text-muted-foreground">A exclusão da conta não elimina o recebimento de e-mails do PersonalFit. Para que isso aconteça, peça no personalfit@gmail.com.br</span>
                 </div>
-                <Button className="bg-red-800 text-white hover:text-red-950">Excluir minha conta</Button>
+                <Button className="bg-red-700 text-white hover:bg-red-900">Excluir minha conta</Button>
             </div>
         </>
 

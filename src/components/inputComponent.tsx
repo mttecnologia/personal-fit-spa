@@ -28,7 +28,7 @@ const InputControl = forwardRef<HTMLInputElement, InputControlProps>(({ classNam
     return (
         <input
             className={
-                cn("flex-1 border-0 text-black bg-transparent placeholder:text-zinc-900 focus:outline-none disabled:bg-slate-100 disabled:cursor-not-allowed",
+                cn("flex-1 w-full border-0 text-black bg-transparent placeholder:text-zinc-900 focus:outline-none disabled:bg-slate-100 disabled:cursor-not-allowed",
                     className)}
             {...props}
             ref={ref}
