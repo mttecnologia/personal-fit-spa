@@ -4,7 +4,8 @@ import * as Tabs from "@radix-ui/react-tabs"
 import { TabsItems } from "./tabsItems"
 import { useState } from "react"
 import Profile from "./profile"
-import VisaoGeral from "./overview"
+import Overview from "./overview"
+import AccessData from "./access-data"
 
 export const SettingsTabls = () => {
     const [currentTabs, setCurrentTabs] = useState("tab1")
@@ -18,7 +19,7 @@ export const SettingsTabls = () => {
             </Tabs.List>
 
             <Tabs.Content value="tab1">
-                <VisaoGeral />
+                <Overview />
             </Tabs.Content>
 
             <Tabs.Content value="tab2">
@@ -26,7 +27,7 @@ export const SettingsTabls = () => {
             </Tabs.Content>
 
             <Tabs.Content value="tab3">
-                <p>tab3</p>
+                <AccessData/>
             </Tabs.Content>
 
             <Tabs.Content value="tab4">

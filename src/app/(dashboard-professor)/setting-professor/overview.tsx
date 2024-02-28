@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { KeyRound, LockKeyhole, Mail, MapPin, Monitor, Phone, SquareUser, User, UserX } from "lucide-react";
 
-const VisaoGeral = () => {
+const Overview = () => {
     return (
         <>
             <div className="w-full mt-4">
@@ -88,4 +88,4 @@ const VisaoGeral = () => {
 
     )
 }
-export default VisaoGeral;
+export default Overview;
