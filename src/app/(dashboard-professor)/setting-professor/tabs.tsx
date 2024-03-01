@@ -6,6 +6,7 @@ import { useState } from "react"
 import Profile from "./profile"
 import Overview from "./overview"
 import AccessData from "./access-data"
+import Subscriptions from "./subscription"
 
 export const SettingsTabls = () => {
     const [currentTabs, setCurrentTabs] = useState("tab1")
@@ -31,7 +32,7 @@ export const SettingsTabls = () => {
             </Tabs.Content>
 
             <Tabs.Content value="tab4">
-                <p>tab4</p>
+                <Subscriptions/>
             </Tabs.Content>
         </Tabs.Root>
     )

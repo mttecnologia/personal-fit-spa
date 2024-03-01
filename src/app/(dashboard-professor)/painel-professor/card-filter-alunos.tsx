@@ -2,13 +2,12 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
-export const TableFilter = () => {
+export const CardFilter = () => {
     return (
-        <div className="flex items-center justify-between">
-            <div className="flex gap-2">
-                <Input placeholder="nome do cliente" className="h-8 w-[320px]" />
+            <div className="flex justify-start items-center mt-3 gap-4 ml-5">
+                <Input placeholder="nome do cliente" className="h-10 w-[320px] focus:outline-none" />
                 <Select>
-                    <SelectTrigger className="h-8 w-[180px]">
+                    <SelectTrigger className="h-10 w-[180px]">
                         <SelectValue placeholder="Todos" />
                     </SelectTrigger>
                     <SelectContent>
@@ -21,6 +20,5 @@ export const TableFilter = () => {
                     </SelectContent>
                 </Select>
             </div>
-        </div>
     )
 }
