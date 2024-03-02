@@ -6,7 +6,7 @@ import CardContentAluno from "./card-content-aluno"
 
 const CardAluno = () => {
     return (
-        <Card className="">
+        <Card className="col-span-2">
             <CardHeader className="flex-row space-y-0 items-center justify-between pb-2 border-b ">
                 <div>
                     <CardTitle className="text-lg font-semibold">Alunos</CardTitle>

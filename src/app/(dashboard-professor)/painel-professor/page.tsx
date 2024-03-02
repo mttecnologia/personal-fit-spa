@@ -2,6 +2,7 @@ import { Tabela } from "@/components/Table/tabela";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Ban, DollarSign, Users2 } from "lucide-react";
 import CardAluno from "./card-alunos";
+import { PopularChart } from "./pupular-alunos-chart";
 
 const PainelProfessor = () => {
     return (
@@ -71,9 +72,9 @@ const PainelProfessor = () => {
                     </CardContent>
                 </Card>
             </div>
-            <div className="grid grid-cols-2 mt-5">
+            <div className="grid grid-cols-3 mt-5 gap-10">
                 <CardAluno />
-                {/* <Tabela /> */}
+                <PopularChart/>
             </div>
         </div>
     )
