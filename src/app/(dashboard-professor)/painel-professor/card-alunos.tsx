@@ -27,6 +27,8 @@ const CardAluno = () => {
                     <CardContentAluno />
                     <CardContentAluno />
                     <CardContentAluno />
+                    <CardContentAluno />
+                    <CardContentAluno />
                 </CardContent>
             </div>
         </Card>

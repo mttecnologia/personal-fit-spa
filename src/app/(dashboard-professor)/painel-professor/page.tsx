@@ -72,7 +72,7 @@ const PainelProfessor = () => {
                     </CardContent>
                 </Card>
             </div>
-            <div className="grid grid-cols-3 mt-5 gap-10">
+            <div className="grid grid-cols-3 mt-5 gap-5">
                 <CardAluno />
                 <PopularChart/>
             </div>

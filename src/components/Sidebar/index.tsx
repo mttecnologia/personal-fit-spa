@@ -1,10 +1,9 @@
-import { BarChart, CircleDollarSign, Cog, Dumbbell, LibraryBig, LogOut, Search, SquareStack, Users, Users2, Video } from "lucide-react"
+import { BarChart, CircleDollarSign, Cog, Dumbbell, LibraryBig, LogOut, Users2, Video } from "lucide-react"
 import { NaviItem } from "./naveItem"
-// import { ModeToggle } from "../theme/theme-mode"
 
 export const Sidebar = () => {
     return (
-        <aside className='flex flex-col border-r gap-2 border-zinc-200 px-3 py-6 dark:bg-black'>
+        <aside className='fixed flex flex-col border-r gap-2 border-zinc-200 px-3 py-6 dark:bg-black min-h-screen'>
             <div className="flex items-center justify-between border-b border-zinc-200 pb-5">
                 <Dumbbell className="h-10 w-10" />
                 <span className="text-muted-foreground font-medium text-lg">Personal Fit</span>

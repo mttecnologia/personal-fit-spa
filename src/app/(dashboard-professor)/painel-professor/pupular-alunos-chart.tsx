@@ -28,7 +28,7 @@ const COLORS = [
 export const PopularChart = () => {
 
     return (
-        <Card className="col-span-1">
+        <Card className="col-span-1 h-[350px]">
             <CardHeader className="pb-8">
                 <div className="flex items-center justify-between">
                     <CardTitle className="text-base font-medium">
