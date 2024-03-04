@@ -1,10 +1,11 @@
 import { RegisterLogin, ResetSenha, login } from "@/interface/auth";
+import { tokenService } from "./token-service";
 
 export const Auth = {
- 
+
   async Login(dados: login) {
     try {
-      const response = await fetch("http://localhost:8787/auth/login", {
+      const response = await fetch("http://localhost:8787/v1/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -12,9 +13,9 @@ export const Auth = {
         body: JSON.stringify(dados)
       })
 
-      const authResponse = response.json()
-
-      return authResponse;
+      const authResponse = await response.json()
+      console.log(authResponse)
+      tokenService.save(authResponse.data.token)
     } catch (e) {
       console.log(e)
     }

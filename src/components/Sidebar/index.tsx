@@ -12,10 +12,10 @@ export const Sidebar = () => {
 
             <nav className="space-y-0.5">
                 <NaviItem icon={BarChart} title="Dashboard" link="/painel-professor"/>
-                <NaviItem icon={Users2} title="Gerenciador de Alunos" />
-                <NaviItem icon={LibraryBig} title="Biblioteca de Treinos" />
-                <NaviItem icon={Video} title="Biblioteca de Exercícios" />
-                <NaviItem icon={CircleDollarSign} title="Financeiro" />
+                <NaviItem icon={Users2} title="Gerenciador de Alunos" link="/painel-professor" />
+                <NaviItem icon={LibraryBig} title="Biblioteca de Treinos" link="/painel-professor"/>
+                <NaviItem icon={Video} title="Biblioteca de Exercícios" link="/painel-professor"/>
+                <NaviItem icon={CircleDollarSign} title="Financeiro" link="/painel-professor"/>
                 <NaviItem icon={Cog} title="Setting" link="/setting-professor"/>
             </nav>
             <div className="mt-auto text-black flex flex-col gap-6">
