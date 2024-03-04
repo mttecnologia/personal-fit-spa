@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { User, UserRoundPlus } from "lucide-react"
 import { CardFilter } from "./card-filter-alunos"
 import CardContentAluno from "./card-content-aluno"
+import Link from "next/link"
 
 const CardAluno = () => {
     return (
@@ -12,10 +13,10 @@ const CardAluno = () => {
                     <CardTitle className="text-lg font-semibold">Alunos</CardTitle>
                     <CardDescription>Acompanhe as informações dos seus alunos</CardDescription>
                 </div>
-                <Button size="sm" className="bg-sky-600 hover:bg-sky-700  text-sm flex gap-1">
+                <Link href="painel-professor/cadastro-aluno" className="bg-sky-600 hover:bg-sky-700 text-sm flex gap-2 items-center justify-center text-white font-semibold rounded-sm py-2 px-3 ">
                     Aluno
                     <UserRoundPlus className="h-4 w-4" />
-                </Button>
+                </Link>
             </CardHeader>
             <CardFilter />
             <div className="relative overflow-hidden h-[500px]">

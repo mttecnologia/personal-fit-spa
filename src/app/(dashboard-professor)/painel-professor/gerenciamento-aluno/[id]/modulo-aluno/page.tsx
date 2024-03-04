@@ -7,12 +7,8 @@ import {
     DropdownMenuGroup,
     DropdownMenuItem,
     DropdownMenuLabel,
-    DropdownMenuPortal,
     DropdownMenuSeparator,
     DropdownMenuShortcut,
-    DropdownMenuSub,
-    DropdownMenuSubContent,
-    DropdownMenuSubTrigger,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
@@ -77,80 +73,80 @@ const ModuloAluno = () => {
                     </Card>
                 </div>
                 <div className="col-span-3 flex gap-5 flex-wrap justify-center items-center">
-                    <Card className="bg-sky-800 w-[250px] hover:cursor-pointer">
+                    <Card className="bg-white w-[250px] hover:cursor-pointer border-2 border-sky-800 hover:bg-sky-800 group">
                         <CardHeader className="flex-row space-y-0 items-center justify-between pb-2">
                             <CardTitle className="text-base font-semibold">
-                                <span className="text-white font-semibold text-lg">Treinos</span>
+                                <span className="text-black font-semibold text-lg group-hover:text-white">Treinos</span>
                             </CardTitle>
-                            <Dumbbell className="h-11 w-11 text-white rounded-full px-2 bg-sky-400" />
+                            <Dumbbell className="h-11 w-11 text-white rounded-full px-2 bg-sky-800 group-hover:bg-sky-400" />
                         </CardHeader>
                         <CardContent className="space-y-1">
-                            <p className="text-xs text-white">
+                            <p className="text-xs text-black group-hover:text-white">
                                 Rotina de treino do seu aluno ! 
                             </p>
                         </CardContent>
                     </Card>
-                    <Card className="bg-sky-800 w-[250px] hover:cursor-pointer">
+                    <Card className="bg-white w-[250px] hover:cursor-pointer border-2 border-sky-800 hover:bg-sky-800 group">
                         <CardHeader className="flex-row space-y-0 items-center justify-between pb-2">
                             <CardTitle className="text-base font-semibold">
-                                <span className="text-white font-semibold text-lg">Novos Treinos</span>
+                                <span className="text-balck font-semibold text-lg group-hover:text-white">Novos Treinos</span>
                             </CardTitle>
-                            <FilePlus2 className="h-11 w-11 text-white rounded-full px-2 bg-sky-400" />
+                            <FilePlus2 className="h-11 w-11 text-white rounded-full px-2 bg-sky-800 group-hover:bg-sky-400" />
                         </CardHeader>
                         <CardContent className="space-y-1">
-                            <p className="text-xs text-white">
+                            <p className="text-xs text-black group-hover:text-white">
                                 Crie novos ciclos de treino ! 
                             </p>
                         </CardContent>
                     </Card>
-                    <Card className="bg-sky-800 w-[250px] hover:cursor-pointer">
+                    <Card className="bg-white w-[250px] hover:cursor-pointer border-2 border-sky-800 hover:bg-sky-800 group">
                         <CardHeader className="flex-row space-y-0 items-center justify-between pb-2">
                             <CardTitle className="text-base font-semibold">
-                                <span className="text-white font-semibold text-lg">Avaliações</span>
+                                <span className="text-black font-semibold text-lg group-hover:text-white">Avaliações</span>
                             </CardTitle>
-                            <ClipboardList className="h-11 w-11 text-white rounded-full px-2 bg-sky-400" />
+                            <ClipboardList className="h-11 w-11 text-white rounded-full px-2 bg-sky-800 group-hover:bg-sky-400" />
                         </CardHeader>
                         <CardContent className="space-y-1">
-                            <p className="text-xs text-white">
+                            <p className="text-xs text-black group-hover:text-white">
                               acompanhe as avaliações do aluno ! 
                             </p>
                         </CardContent>
                     </Card>
-                    <Card className="bg-sky-800 w-[250px] hover:cursor-pointer">
+                    <Card className="bg-white w-[250px] hover:cursor-pointer border-2 border-sky-800 hover:bg-sky-800 group">
                         <CardHeader className="flex-row space-y-0 items-center justify-between pb-2">
                             <CardTitle className="text-base font-semibold">
-                                <span className="text-white font-semibold text-lg">Progresso do aluno</span>
+                                <span className="text-black font-semibold text-lg group-hover:text-white">Progresso do aluno</span>
                             </CardTitle>
-                            <ClipboardCheck className="h-11 w-11 text-white rounded-full px-2 bg-sky-400" />
+                            <ClipboardCheck className="h-11 w-11 text-white rounded-full px-2 bg-sky-800 group-hover:bg-sky-400" />
                         </CardHeader>
                         <CardContent className="space-y-1">
-                            <p className="text-xs text-white">
+                            <p className="text-xs text-black group-hover:text-white">
                                 Evolução do seu aluno ! 
                             </p>
                         </CardContent>
                     </Card>
-                    <Card className="bg-sky-800 w-[250px] hover:cursor-pointer">
+                    <Card className="bg-white w-[250px] hover:cursor-pointer border-2 border-sky-800 hover:bg-sky-800 group">
                         <CardHeader className="flex-row space-y-0 items-center justify-between pb-2">
                             <CardTitle className="text-base font-semibold">
-                                <span className="text-white font-semibold text-lg">Faturas</span>
+                                <span className="text-black font-semibold text-lg group-hover:text-white">Faturas</span>
                             </CardTitle>
-                            <CircleDollarSign className="h-11 w-11 text-white rounded-full px-2 bg-sky-400" />
+                            <CircleDollarSign className="h-11 w-11 text-white rounded-full px-2 bg-sky-800 group-hover:bg-sky-400" />
                         </CardHeader>
                         <CardContent className="space-y-1">
-                            <p className="text-xs text-white">
+                            <p className="text-xs text-black group-hover:text-white ">
                              financias desse aluno ! 
                             </p>
                         </CardContent>
                     </Card>
-                    <Card className="bg-sky-800 w-[250px] hover:cursor-pointer">
+                    <Card className="bg-white w-[250px] hover:cursor-pointer border-2 border-sky-800 hover:bg-sky-800 group">
                         <CardHeader className="flex-row space-y-0 items-center justify-between pb-2">
                             <CardTitle className="text-base font-semibold">
-                                <span className="text-white font-semibold text-lg">Arquivos</span>
+                                <span className="text-black font-semibold text-lg group-hover:text-white">Arquivos</span>
                             </CardTitle>
-                            <Archive className="h-11 w-11 text-white rounded-full px-2 bg-sky-400" />
+                            <Archive className="h-11 w-11 text-white rounded-full px-2 bg-sky-800 group-hover:bg-sky-400" />
                         </CardHeader>
                         <CardContent className="space-y-1">
-                            <p className="text-xs text-white">
+                            <p className="text-xs text-black group-hover:text-white">
                                 Arquivos do seu aluno ! 
                             </p>
                         </CardContent>
