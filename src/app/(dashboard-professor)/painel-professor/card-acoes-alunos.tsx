@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button"
 import { DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Archive, CircleDollarSign, ClipboardCheck, ClipboardList, Dumbbell, FilePlus2, UserRoundCog } from "lucide-react"
+import Link from "next/link"
 
 export const CardAcoesAlunos = () => {
     return (
@@ -36,10 +37,10 @@ export const CardAcoesAlunos = () => {
                         <span>Arquivos</span>
                     </div>
                 </div>
-                <Button variant="default" size="sm" className="bg-sky-600 hover:bg-sky-700 text-sm w-full flex gap-2 items-center">
+                <Link href="painel-professor/gerenciamento-aluno/1/modulo-aluno" className="bg-sky-600 hover:bg-sky-700 text-sm w-full flex gap-2 items-center justify-center text-white font-semibold rounded-sm py-2 ">
                     Ir pro Aluno
-                    <UserRoundCog className="h-4 w-4"/>
-                </Button>
+                    <UserRoundCog className="h-4 w-4 text-white" />
+                </Link>
             </DialogHeader>
         </DialogContent>
     )
